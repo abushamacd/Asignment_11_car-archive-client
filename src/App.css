@@ -39,7 +39,7 @@
 }
 
 /* Base CSS */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap");
 
 :root {
   --defaultColor: #cc0000;
@@ -57,4 +57,23 @@
 
 ::-webkit-scrollbar-track:hover {
   background: var(--defaultHoverColor) !important;
+}
+
+.theme_color {
+  color: var(--defaultColor);
+}
+
+.text_justify {
+  text-align: justify;
+}
+
+.btn-outline-themeButton {
+  color: var(--defaultColor) !important;
+  border-color: var(--defaultColor) !important;
+}
+
+.btn-outline-themeButton:hover {
+  color: #fff !important;
+  background-color: var(--defaultColor);
+  border-color: var(--defaultColor);
 }
