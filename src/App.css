@@ -40,6 +40,12 @@
 
 /* Base CSS */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
 
 :root {
   --defaultColor: #cc0000;
@@ -61,6 +67,18 @@
 
 .theme_color {
   color: var(--defaultColor);
+  transition: all 0.5s;
+}
+
+.theme_color:hover {
+  color: var(--defaultHoverColor);
+}
+.theme_color_hover {
+  transition: all 0.5s;
+}
+
+.theme_color_hover:hover {
+  color: var(--defaultHoverColor);
 }
 
 .text_justify {
