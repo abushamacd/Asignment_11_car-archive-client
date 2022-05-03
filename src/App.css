@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 1200px;
 }
 
 .App-logo {
@@ -35,4 +36,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Base CSS */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --defaultColor: #cc0000;
+  --defaultHoverColor: #ec3d51;
+}
+
+::-webkit-scrollbar {
+  width: 07px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--defaultColor) !important;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: var(--defaultHoverColor) !important;
 }
