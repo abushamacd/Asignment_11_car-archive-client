@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import testi_bg from "../../../images/testimonials.jpg";
-import "./Testimonial.css";
+import "./Newsletter.css";
 
-const Testimonial = () => {
+const Newsletter = () => {
   return (
     <section
       style={{ backgroundImage: `url(${testi_bg})` }}
@@ -40,4 +40,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default Newsletter;
