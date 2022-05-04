@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import auth from "../../../../firebase.config";
 import Loading from "../../Loading/Loading";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -93,6 +94,7 @@ const Login = () => {
               Reset Password
             </span>{" "}
           </p>
+          <SocialLogin></SocialLogin>
         </Col>
       </Row>
     </Container>

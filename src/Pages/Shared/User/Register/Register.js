@@ -6,6 +6,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../Loading/Loading";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   // Declear state for save checked info for conditinal randering
@@ -101,6 +102,7 @@ const Register = () => {
               Please login
             </span>{" "}
           </p>
+          <SocialLogin></SocialLogin>
         </Col>
       </Row>
     </Container>
