@@ -35,9 +35,13 @@ const Header = () => {
             <Nav.Link as={Link} to="/home">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/inventory">
-              Inventory
-            </Nav.Link>
+            {user ? (
+              <Nav.Link as={Link} to="/manage">
+                Manage Items
+              </Nav.Link>
+            ) : (
+              <></>
+            )}
           </Nav>
           <Nav>
             {/* Conditinal randering */}

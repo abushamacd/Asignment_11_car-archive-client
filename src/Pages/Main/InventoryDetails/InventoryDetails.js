@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useInventoryDetail from "../../../hooks/useInventoryDetail";
 
 const InventoryDetails = () => {
@@ -48,6 +48,28 @@ const InventoryDetails = () => {
               </Button>{" "}
             </Card.Body>
           </Card>
+        </Col>
+        <Col md={6} className="my-5">
+          <h2>Restock the item</h2>
+          <form>
+            <input
+              type="number"
+              name="quantity"
+              id="quantity"
+              className="form-control"
+              placeholder="Type restock quentity number"
+            />
+            <input
+              type="submit"
+              value="Restock"
+              className="btn btn-outline-themeButton mt-2"
+            />
+          </form>
+          <Link to={`/manage`}>
+            <Button className="my-3" variant="outline-themeButton">
+              Manage Inventories
+            </Button>{" "}
+          </Link>
         </Col>
       </Row>
     </Container>

@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useInventory from "../../../hooks/useInventory";
 import SingleInventroy from "../SingleInventroy/SingleInventroy";
 
@@ -19,6 +20,13 @@ const Inventory = () => {
           ></SingleInventroy>
         ))}
       </Row>
+      <div className="text-center">
+        <Link to={`/manage`}>
+          <Button className="my-3" variant="outline-themeButton">
+            Manage Inventories
+          </Button>{" "}
+        </Link>
+      </div>
     </Container>
   );
 };

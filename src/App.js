@@ -30,6 +30,7 @@ function App() {
             </RequiredAuth>
           }
         />
+        <Route path="/manage" element={<RequiredAuth></RequiredAuth>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
