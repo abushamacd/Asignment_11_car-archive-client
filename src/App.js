@@ -5,6 +5,7 @@ import Home from "./Pages/Main/Home/Home";
 import Inventory from "./Pages/Main/Inventory/Inventory";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Footer from "./Pages/Shared/Footer/Footer";
+import Register from "./Pages/Shared/User/Register/Register";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/inventory" element={<Inventory />} />
+        <Route path="/register" element={<Register></Register>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

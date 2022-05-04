@@ -112,3 +112,7 @@
 .theme_border {
   border: 1px solid var(--defaultColor) !important;
 }
+
+.cursor_pointer {
+  cursor: pointer;
+}
