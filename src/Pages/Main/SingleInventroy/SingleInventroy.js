@@ -1,18 +1,24 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
+import "./SingleInventroy.css";
 
 const SingleInventroy = ({ inventory }) => {
   // De-structuring
-  const { name, img, price, quantity, description } = inventory;
+  const { name, img, price, quantity, supplier, description } = inventory;
   return (
     <Col>
       <Card>
-        <Card.Img variant="top" className="img-fluid" src={img} />
+        <Card.Img variant="top" className="img-fluid p-3 radius" src={img} />
         <Card.Body>
           <Card.Title className="theme_color text-center">{name}</Card.Title>
-          <p className="d-flex justify-content-between">
+          <p>
             <b>
               Price: <span className="theme_color">${price} </span>
+            </b>
+          </p>
+          <p className="d-flex justify-content-between">
+            <b>
+              Supplier: <span className="theme_color">{supplier} </span>
             </b>
             <br />
             <b>

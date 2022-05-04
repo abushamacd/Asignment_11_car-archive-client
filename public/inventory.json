@@ -4,6 +4,7 @@
     "name": "2011 Lexus RX",
     "img": "https://i.ibb.co/TYRyZHx/2011-Lexus-RX.jpg",
     "quantity": "13",
+    "supplier": "Lexus",
     "description": "The 2011 Lexus RX 350 leads when it comes to providing a plush ride, a luxurious cabin and everyday utility. For most buyers, those attributes should be enough to overcome its rather lifeless driving dynamics.",
     "price": 19900
   },
@@ -12,6 +13,7 @@
     "name": "2013 Volkswagen Eos",
     "img": "https://i.ibb.co/9wZ8Qg3/2013-Volkswagen-Eos.jpg",
     "quantity": "11",
+    "supplier": "Volkswagen",
     "description": "The 2013 Volkswagen Eos is about as conservative and understated as you can get with a convertible. From the outside it looks designed to offend no one, while it's handsome and straightforward there's nothing all that charming about the design.",
     "price": 18900
   },
@@ -20,6 +22,7 @@
     "name": "2013 Audi A4",
     "img": "https://i.ibb.co/X7GhZvw/2013-Audi-A4.jpg",
     "quantity": "11",
+    "supplier": "Audi",
     "description": "The used 2013 Audi A4 is among the most well-rounded luxury small cars available. It offers refined performance and one of the most upscale cabins in the class. The back seats may be tight, but all in all this is a great used car.",
     "price": 17900
   },
@@ -28,6 +31,7 @@
     "name": "2015 Lexus RC 350 AWD",
     "img": "https://i.ibb.co/YpGJsFw/2015-Lexus-RC-350-AWD.jpg",
     "quantity": "11",
+    "supplier": "Lexus",
     "description": "The 2015 Lexus RC 350 comes with a 3.5-liter V6 generating 306 horsepower and 277 pound-feet of torque. An eight-speed automatic transmission is standard for rear-wheel-drive models, but a six-speed automatic is used for all-wheel-drive cars.",
     "price": 32900
   },
@@ -36,6 +40,7 @@
     "name": "2008 Chevrolet Suburban LT 2500",
     "img": "https://i.ibb.co/kcNVVDJ/2008-Chevrolet-Suburban-LT-2500.jpg",
     "quantity": "11",
+    "supplier": "Chevrolet",
     "description": "The 2008 Chevrolet Suburban maintains the same maximum-size virtues that have kept it a bestseller for so many years. It remains the first choice for anyone who needs to haul six or more people plus their cargo. The Suburban 2500 is available in LS and LT trims in both 2WD and 4WD.",
     "price": 32900
   },
@@ -44,6 +49,7 @@
     "name": "2017 Audi R8 2017",
     "img": "https://i.ibb.co/n62mpZK/2017-Audi-R8-2017.jpg",
     "quantity": "11",
+    "supplier": "Audi",
     "description": "The new R8's looks are an evolution of the stunning first-generation model. It has the low-slung stance of a supercar, with the cab pushed forward and the coupe body sloping back in a continuous arch to the rear spoiler.",
     "price": 206300
   }
