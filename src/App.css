@@ -88,10 +88,27 @@
 .btn-outline-themeButton {
   color: var(--defaultColor) !important;
   border-color: var(--defaultColor) !important;
+  transition: all 0.5s !important;
 }
 
 .btn-outline-themeButton:hover {
   color: #fff !important;
   background-color: var(--defaultColor);
   border-color: var(--defaultColor);
+}
+
+.btn-themeButton {
+  color: #fff !important;
+  background-color: var(--defaultColor) !important;
+  transition: all 0.5s !important;
+}
+
+.btn-themeButton:hover {
+  color: var(--defaultColor) !important;
+  background-color: #fff !important;
+  border-color: var(--defaultColor);
+}
+
+.theme_border {
+  border: 1px solid var(--defaultColor) !important;
 }
