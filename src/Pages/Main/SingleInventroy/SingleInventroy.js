@@ -1,10 +1,16 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import "./SingleInventroy.css";
+import { useNavigate } from "react-router-dom";
 
 const SingleInventroy = ({ inventory }) => {
   // De-structuring
-  const { name, img, price, quantity, supplier, description } = inventory;
+  const { _id, name, img, price, quantity, supplier, description } = inventory;
+
+  const navigate = useNavigate();
+  const navigateToInventoryDetail = (id) => {
+    navigate(`/inventory/${id}`);
+  };
   return (
     <Col>
       <Card>
@@ -30,7 +36,11 @@ const SingleInventroy = ({ inventory }) => {
               ? description.slice(0, 150) + "..."
               : description}
           </Card.Text>
-          <Button className="w-100" variant="outline-themeButton">
+          <Button
+            onClick={() => navigateToInventoryDetail(_id)}
+            className="w-100"
+            variant="outline-themeButton"
+          >
             Update
           </Button>{" "}
         </Card.Body>

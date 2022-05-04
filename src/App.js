@@ -8,6 +8,8 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Register from "./Pages/Shared/User/Register/Register";
 import Login from "./Pages/Shared/User/Login/Login";
 import ResetPassword from "./Pages/Shared/User/ResetPassword/ResetPassword";
+import RequiredAuth from "./Pages/Shared/RequiredAuth/RequiredAuth";
+import InventoryDetails from "./Pages/Main/InventoryDetails/InventoryDetails";
 
 function App() {
   return (
@@ -20,6 +22,14 @@ function App() {
         <Route path="/register" element={<Register></Register>} />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/reset" element={<ResetPassword></ResetPassword>} />
+        <Route
+          path="/inventory/:id"
+          element={
+            <RequiredAuth>
+              <InventoryDetails />
+            </RequiredAuth>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
