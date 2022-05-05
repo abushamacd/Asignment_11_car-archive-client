@@ -1,5 +1,6 @@
 import React from "react";
-import { Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useInventory from "../../../hooks/useInventory";
 import Banner from "../Banner/Banner";
 import Newsletter from "../Newsletter/Newsletter";
@@ -13,20 +14,30 @@ const Home = () => {
     <div>
       <Banner />
       {/* Inventory Section */}
-      <Row>
-        <h2 className="text-center my-5">
-          {" "}
-          <span className="theme_color">Inventory</span> <span>Collection</span>
-        </h2>
-      </Row>
-      <Row xs={1} md={2} lg={3} className="g-4 mb-5">
-        {slicedInventoris.map((inventory) => (
-          <SingleInventroy
-            key={inventory._id}
-            inventory={inventory}
-          ></SingleInventroy>
-        ))}
-      </Row>
+      <Container>
+        <Row>
+          <h2 className="text-center my-5">
+            {" "}
+            <span className="theme_color">Inventory</span>{" "}
+            <span>Collection</span>
+          </h2>
+        </Row>
+        <Row xs={1} md={2} lg={3} className="g-4 mb-5">
+          {slicedInventoris.map((inventory) => (
+            <SingleInventroy
+              key={inventory._id}
+              inventory={inventory}
+            ></SingleInventroy>
+          ))}
+        </Row>
+        <Row className="text-center">
+          <Link to={`/manage`}>
+            <Button className="mb-3" variant="outline-themeButton">
+              Manage Inventories
+            </Button>{" "}
+          </Link>
+        </Row>
+      </Container>
 
       <Newsletter />
     </div>

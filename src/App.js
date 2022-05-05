@@ -11,6 +11,7 @@ import RequiredAuth from "./Pages/Shared/RequiredAuth/RequiredAuth";
 import InventoryDetails from "./Pages/Main/InventoryDetails/InventoryDetails";
 import Blogs from "./Pages/Main/Blogs/Blogs";
 import AddItem from "./Pages/Main/AddItem/AddItem";
+import Inventory from "./Pages/Main/Inventory/Inventory";
 
 function App() {
   return (
@@ -31,7 +32,14 @@ function App() {
             </RequiredAuth>
           }
         />
-        <Route path="/manage" element={<RequiredAuth></RequiredAuth>} />
+        <Route
+          path="/manage"
+          element={
+            <RequiredAuth>
+              <Inventory />
+            </RequiredAuth>
+          }
+        />
         <Route
           path="/add"
           element={

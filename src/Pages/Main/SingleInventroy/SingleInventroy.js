@@ -33,7 +33,7 @@ const SingleInventroy = ({ inventory }) => {
           </p>
           <Card.Text title={description} className="text_justify">
             {description.length > 20
-              ? description.slice(0, 120) + "..."
+              ? description.slice(0, 100) + "..."
               : description}
           </Card.Text>
           <Button
