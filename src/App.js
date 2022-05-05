@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./Pages/Shared/Header/Header";
 import Home from "./Pages/Main/Home/Home";
-import Inventory from "./Pages/Main/Inventory/Inventory";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Register from "./Pages/Shared/User/Register/Register";
@@ -11,6 +10,7 @@ import ResetPassword from "./Pages/Shared/User/ResetPassword/ResetPassword";
 import RequiredAuth from "./Pages/Shared/RequiredAuth/RequiredAuth";
 import InventoryDetails from "./Pages/Main/InventoryDetails/InventoryDetails";
 import Blogs from "./Pages/Main/Blogs/Blogs";
+import AddItem from "./Pages/Main/AddItem/AddItem";
 
 function App() {
   return (
@@ -19,7 +19,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/inventory" element={<Inventory />} />
         <Route path="/register" element={<Register></Register>} />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/reset" element={<ResetPassword></ResetPassword>} />
@@ -33,6 +32,14 @@ function App() {
           }
         />
         <Route path="/manage" element={<RequiredAuth></RequiredAuth>} />
+        <Route
+          path="/add"
+          element={
+            <RequiredAuth>
+              <AddItem></AddItem>
+            </RequiredAuth>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

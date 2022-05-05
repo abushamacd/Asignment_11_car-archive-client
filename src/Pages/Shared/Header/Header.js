@@ -45,6 +45,13 @@ const Header = () => {
             ) : (
               <></>
             )}
+            {user ? (
+              <Nav.Link as={Link} to="/add">
+                Add Item
+              </Nav.Link>
+            ) : (
+              <></>
+            )}
           </Nav>
           <Nav>
             {/* Conditinal randering */}
