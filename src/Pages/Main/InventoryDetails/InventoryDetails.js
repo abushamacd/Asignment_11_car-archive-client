@@ -38,6 +38,30 @@ const InventoryDetails = () => {
       });
   };
 
+  // Handle restock button
+  const handleRestock = (event) => {
+    event.preventDefault();
+    const quantity =
+      parseInt(event.target.quantity.value) + parseInt(inventory.quantity);
+    event.target.reset();
+    //  send data to server
+    const url = `http://localhost:5000/inventory/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ quantity: quantity }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        toast("Increase quantity by input value");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   return (
     <Container>
       <Row>
@@ -86,7 +110,7 @@ const InventoryDetails = () => {
         </Col>
         <Col md={6} className="my-5">
           <h2>Restock the item</h2>
-          <form>
+          <form onSubmit={handleRestock}>
             <input
               type="number"
               name="quantity"
