@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
-import useInventoryDetail from "../../../hooks/useInventoryDetail";
+import { ToastContainer, toast } from "react-toastify";
+// import useInventoryDetail from "../../../hooks/useInventoryDetail";
 
 const InventoryDetails = () => {
   const { id } = useParams();
-  const [inventory] = useInventoryDetail(id);
+  // const [inventory] = useInventoryDetail(id);
+  const [inventory, setInventory] = useState({});
+
+  useEffect(() => {
+    const url = `http://localhost:5000/inventory/${id}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setInventory(data));
+  }, [id, inventory]);
   const { _id, name, img, price, quantity, supplier, description } = inventory;
+
+  // Handle delivery button
+  const handleDeliverd = () => {
+    const quantity = inventory.quantity - 1;
+    //  send data to server
+    const url = `http://localhost:5000/inventory/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ quantity: quantity }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        toast("Reduce one item by delivery");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
   return (
     <Container>
@@ -43,9 +73,14 @@ const InventoryDetails = () => {
               <Card.Text title={description} className="text_justify">
                 {description}
               </Card.Text>
-              <Button className="w-100" variant="outline-themeButton">
+              <Button
+                onClick={handleDeliverd}
+                className="w-100"
+                variant="outline-themeButton"
+              >
                 Deliverd
               </Button>{" "}
+              <ToastContainer />
             </Card.Body>
           </Card>
         </Col>
