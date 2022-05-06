@@ -7,6 +7,7 @@ const Blogs = () => {
   return (
     <Container>
       <h1 className="text-center my-5">Question &#38; Answer</h1>
+      {/* First question */}
       <div className="qa">
         <h2>
           <span>Q1:</span> Difference between javascript and node js?
@@ -39,6 +40,7 @@ const Blogs = () => {
           <br />
         </p>
       </div>
+      {/* Second question */}
       <div className="qa">
         <h2>
           <span>Q2:</span> Differences between sql and nosql databases?
@@ -64,6 +66,7 @@ const Blogs = () => {
           Server. NoSQL database such as - MongoDB, DynamoDB and CouchDB
         </p>
       </div>
+      {/* Third question */}
       <div className="qa">
         <h2>
           <span>Q3:</span> What is the purpose of jwt and how does it work?

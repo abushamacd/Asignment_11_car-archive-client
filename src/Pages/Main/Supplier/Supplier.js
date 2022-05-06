@@ -9,7 +9,7 @@ import supplier5 from "../../../images/supplier/сhevrolet.png";
 const Supplier = () => {
   return (
     <Container>
-      <Row className="">
+      <Row>
         <Col md={8} className="text-center mx-auto">
           <p className="text-muted m-0">Worldwide Supplier</p>
           <br />

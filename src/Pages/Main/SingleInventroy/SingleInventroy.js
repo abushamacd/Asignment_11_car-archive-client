@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const SingleInventroy = ({ inventory }) => {
   // De-structuring
   const { _id, name, img, price, quantity, supplier, description } = inventory;
-
+  // Navigate to item detalis page
   const navigate = useNavigate();
   const navigateToInventoryDetail = (id) => {
     navigate(`/inventory/${id}`);

@@ -9,7 +9,7 @@ const Footer = () => {
     <Container>
       <Row className="py-3">
         <Col md={6}>
-          <p className=" mb-0">
+          <p className="mb-0">
             Copyright @ {date}. All rights reserved{" "}
             <Link className="text-decoration-none theme_color" to={"/"}>
               Car Archive
@@ -17,7 +17,7 @@ const Footer = () => {
           </p>
         </Col>
         <Col md={6} className="footer_menu">
-          <ul className="">
+          <ul className="text-center">
             <li className="theme_color_hover float-end mx-3">Privacy Policy</li>
             <li className="theme_color_hover float-end mx-3">
               Terms and Conditions

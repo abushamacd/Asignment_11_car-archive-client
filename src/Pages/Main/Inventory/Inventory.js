@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import useInventory from "../../../hooks/useInventory";
 
 const Inventory = () => {
+  // Get data from hook
   const [inventoris, setInventoris] = useInventory();
-  // Delete Item
+  // Delete Item from DB
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
@@ -33,6 +34,7 @@ const Inventory = () => {
         </h2>
         <div>
           <Link to={`/add`}>
+            {/* Add new item page button */}
             <Button className="my-3" variant="outline-themeButton">
               Add new item
             </Button>{" "}
@@ -40,6 +42,7 @@ const Inventory = () => {
         </div>
       </div>
       <Row xs={1} md={2} lg={3} className="g-4">
+        {/* Loop on get data item */}
         {inventoris.map((inventory) => (
           <Col key={inventory._id}>
             <Card>

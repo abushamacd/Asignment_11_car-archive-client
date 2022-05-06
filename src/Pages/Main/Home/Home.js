@@ -8,11 +8,13 @@ import SingleInventroy from "../SingleInventroy/SingleInventroy";
 import Supplier from "../Supplier/Supplier";
 
 const Home = () => {
+  // Get data from hook
   const [inventoris] = useInventory();
   // Inventory slice for home
   const slicedInventoris = inventoris.slice(0, 6);
   return (
     <div>
+      {/* Banner section */}
       <Banner />
       {/* Inventory Section */}
       <Container>
@@ -25,6 +27,7 @@ const Home = () => {
           </h2>
         </Row>
         <Row xs={1} md={2} lg={3} className="g-4 mb-5">
+          {/* Loop on sliced item */}
           {slicedInventoris.map((inventory) => (
             <SingleInventroy
               key={inventory._id}
@@ -33,6 +36,7 @@ const Home = () => {
           ))}
         </Row>
         <Row className="mx-auto w-25 text-center">
+          {/* Manage Inventory Button */}
           <Link to={`/manage`}>
             <Button className="mb-5" variant="outline-themeButton">
               Manage Inventories
@@ -40,7 +44,9 @@ const Home = () => {
           </Link>
         </Row>
       </Container>
+      {/* Supplier section */}
       <Supplier />
+      {/* Footer section */}
       <Newsletter />
     </div>
   );

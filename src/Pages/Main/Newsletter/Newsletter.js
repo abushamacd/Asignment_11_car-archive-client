@@ -12,8 +12,7 @@ const Newsletter = () => {
               Subscribe to our newsletter feed
             </h4>
             <small className="text-white">
-              Simply Dummy Text of the Printin Galley of Type and Bled it to
-              Make a Type.
+              Put your email for get update about offer, news, conferance
             </small>
           </Col>
           <Col md={6}>

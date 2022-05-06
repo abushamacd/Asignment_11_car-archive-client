@@ -6,9 +6,12 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import useInventory from "../../../hooks/useInventory";
 
 const MyItem = () => {
+  // Get user
   const [user] = useAuthState(auth);
-  const [items, setItems] = useState([]);
+  // Get data from hook
   const [inventoris, setInventoris] = useInventory();
+  // Load & set user item on state
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const email = user.email;
@@ -20,7 +23,7 @@ const MyItem = () => {
     getItems();
   }, [user, inventoris]);
 
-  // Delete Item
+  // Delete Item form DB
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {

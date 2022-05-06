@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import useInventoryDetail from "../../../hooks/useInventoryDetail";
 
 const InventoryDetails = () => {
+  // Get id from parameter
   const { id } = useParams();
+  // Get data from hook
   const [inventory] = useInventoryDetail(id);
-
+  // De-structuring
   const { _id, name, img, price, quantity, supplier, description } = inventory;
 
   // Handle delivery button
@@ -80,7 +82,7 @@ const InventoryDetails = () => {
               </p>
               <p className="d-flex justify-content-between">
                 <b>
-                  SKU: <span className="theme_color">{_id} </span>
+                  SKU_ID: <span className="theme_color">{_id} </span>
                 </b>
                 <br />
                 <b>
@@ -95,12 +97,13 @@ const InventoryDetails = () => {
                 className="w-100"
                 variant="outline-themeButton"
               >
-                Deliverd
+                Delivered
               </Button>{" "}
               <ToastContainer />
             </Card.Body>
           </Card>
         </Col>
+        {/* Restock item form */}
         <Col md={6} className="my-5">
           <h2>Restock the item</h2>
           <form onSubmit={handleRestock}>
@@ -117,6 +120,7 @@ const InventoryDetails = () => {
               className="btn btn-outline-themeButton mt-2"
             />
           </form>
+          {/* Manage Inventory page button */}
           <Link to={`/manage`}>
             <Button className="my-3" variant="outline-themeButton">
               Manage Inventories

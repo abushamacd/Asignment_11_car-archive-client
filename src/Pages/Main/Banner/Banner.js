@@ -17,7 +17,6 @@ const Banner = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={banner2} alt="Second slide" />
-
         <Carousel.Caption>
           <h1 className="theme_color">We have everything your car needs! </h1>
           <p>A vehicle that can carries passengers.</p>

@@ -55,6 +55,7 @@ const About = () => {
           </p>
         </Col>
       </Row>
+      {/* Show services */}
       <Row xs={1} md={2} lg={4} className="g-4 mb-5">
         <Col>
           <Card className="text-center border-0">

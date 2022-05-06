@@ -3,13 +3,7 @@ import axios from "axios";
 
 const useInventory = () => {
   const [inventoris, setInventoris] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/inventory")
-  //     .then((res) => res.json())
-  //     .then((data) => setInventoris(data));
-  // }, [inventoris]);
-
+  // Load all data
   useEffect(() => {
     const getItems = async () => {
       const url = `http://localhost:5000/inventory`;

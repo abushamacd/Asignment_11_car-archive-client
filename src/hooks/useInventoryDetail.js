@@ -3,7 +3,7 @@ import axios from "axios";
 
 const useInventoryDetail = (id) => {
   const [inventory, setInventory] = useState({});
-
+  // Load data based on id
   useEffect(() => {
     const getItems = async () => {
       const url = `http://localhost:5000/inventory/${id}`;
