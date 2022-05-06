@@ -16,7 +16,7 @@ const About = () => {
         <Col md={8} className="text-center mx-auto">
           <p className="text-muted m-0">Welcome to</p>
           <br />
-          <hr className="w-25 mx-auto theme_color" />
+          <hr className="w-25 mx-auto theme_color mt-0" />
           <h2 className="text-uppercase">
             {" "}
             <span className="theme_color">Car </span>
