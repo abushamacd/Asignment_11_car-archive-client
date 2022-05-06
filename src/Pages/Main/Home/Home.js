@@ -21,6 +21,7 @@ const Home = () => {
             {" "}
             <span className="theme_color">Inventory</span>{" "}
             <span>Collection</span>
+            <span> ({slicedInventoris.length}) </span>
           </h2>
         </Row>
         <Row xs={1} md={2} lg={3} className="g-4 mb-5">

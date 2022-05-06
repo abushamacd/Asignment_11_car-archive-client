@@ -29,6 +29,7 @@ const Inventory = () => {
           {" "}
           <span>All </span>
           <span className="theme_color">Inventory</span>
+          <span> ({inventoris.length}) </span>
         </h2>
         <div>
           <Link to={`/add`}>
