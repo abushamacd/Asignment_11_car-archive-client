@@ -30,9 +30,9 @@ const Home = () => {
             ></SingleInventroy>
           ))}
         </Row>
-        <Row className="text-center">
+        <Row className="mx-auto w-25 text-center">
           <Link to={`/manage`}>
-            <Button className="mb-3" variant="outline-themeButton">
+            <Button className="mb-5" variant="outline-themeButton">
               Manage Inventories
             </Button>{" "}
           </Link>
