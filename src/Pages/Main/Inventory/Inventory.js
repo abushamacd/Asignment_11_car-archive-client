@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useInventory from "../../../hooks/useInventory";
 
 const Inventory = () => {
@@ -23,11 +24,20 @@ const Inventory = () => {
   };
   return (
     <Container>
-      <h2 className="text-center my-5">
-        {" "}
-        <span>All </span>
-        <span className="theme_color">Inventory</span>
-      </h2>
+      <div className="d-flex justify-content-between my-5">
+        <h2>
+          {" "}
+          <span>All </span>
+          <span className="theme_color">Inventory</span>
+        </h2>
+        <div>
+          <Link to={`/add`}>
+            <Button className="my-3" variant="outline-themeButton">
+              Add new item
+            </Button>{" "}
+          </Link>
+        </div>
+      </div>
       <Row xs={1} md={2} lg={3} className="g-4">
         {inventoris.map((inventory) => (
           <Col key={inventory._id}>
