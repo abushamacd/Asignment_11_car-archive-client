@@ -1,10 +1,26 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import useInventory from "../../../hooks/useInventory";
-import SingleInventroy from "../SingleInventroy/SingleInventroy";
 
 const Inventory = () => {
-  const [inventoris] = useInventory();
+  const [inventoris, setInventoris] = useInventory();
+  // Delete Item
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/inventory/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaing = inventoris.filter(
+            (inventory) => inventory._id !== id
+          );
+          setInventoris(remaing);
+        });
+    }
+  };
   return (
     <Container>
       <h2 className="text-center my-5">
@@ -14,7 +30,7 @@ const Inventory = () => {
       </h2>
       <Row xs={1} md={2} lg={3} className="g-4">
         {inventoris.map((inventory) => (
-          <Col>
+          <Col key={inventory._id}>
             <Card>
               <Card.Img
                 variant="top"
@@ -50,7 +66,11 @@ const Inventory = () => {
                     ? inventory.description.slice(0, 100) + "..."
                     : inventory.description}
                 </Card.Text>
-                <Button className="w-100" variant="outline-themeButton">
+                <Button
+                  onClick={() => handleDelete(inventory._id)}
+                  className="w-100"
+                  variant="outline-themeButton"
+                >
                   Delete this item
                 </Button>{" "}
               </Card.Body>
