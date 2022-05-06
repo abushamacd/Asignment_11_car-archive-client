@@ -2,19 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-// import useInventoryDetail from "../../../hooks/useInventoryDetail";
+import useInventoryDetail from "../../../hooks/useInventoryDetail";
 
 const InventoryDetails = () => {
   const { id } = useParams();
-  // const [inventory] = useInventoryDetail(id);
-  const [inventory, setInventory] = useState({});
+  const [inventory] = useInventoryDetail(id);
 
-  useEffect(() => {
-    const url = `http://localhost:5000/inventory/${id}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setInventory(data));
-  }, [id, inventory]);
   const { _id, name, img, price, quantity, supplier, description } = inventory;
 
   // Handle delivery button

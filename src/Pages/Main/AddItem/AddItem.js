@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.config";
+import { toast, ToastContainer } from "react-toastify";
 
 const AddItem = () => {
   const { register, handleSubmit } = useForm();
@@ -19,7 +20,9 @@ const AddItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
+        if (result.insertedId) {
+          toast("Your item id added to DB");
+        }
       });
   };
   return (
@@ -73,6 +76,7 @@ const AddItem = () => {
           type="submit"
           value={`Add Item`}
         />
+        <ToastContainer />
       </form>
     </div>
   );

@@ -13,6 +13,7 @@ import Blogs from "./Pages/Main/Blogs/Blogs";
 import AddItem from "./Pages/Main/AddItem/AddItem";
 import Inventory from "./Pages/Main/Inventory/Inventory";
 import About from "./Pages/Main/About/About";
+import MyItem from "./Pages/Main/MyItem/MyItem";
 
 function App() {
   return (
@@ -46,7 +47,15 @@ function App() {
           path="/add"
           element={
             <RequiredAuth>
-              <AddItem></AddItem>
+              <AddItem />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          path="/myitem"
+          element={
+            <RequiredAuth>
+              <MyItem />
             </RequiredAuth>
           }
         />
