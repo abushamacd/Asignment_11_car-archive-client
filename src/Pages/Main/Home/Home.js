@@ -5,6 +5,7 @@ import useInventory from "../../../hooks/useInventory";
 import Banner from "../Banner/Banner";
 import Newsletter from "../Newsletter/Newsletter";
 import SingleInventroy from "../SingleInventroy/SingleInventroy";
+import Supplier from "../Supplier/Supplier";
 
 const Home = () => {
   const [inventoris] = useInventory();
@@ -38,7 +39,7 @@ const Home = () => {
           </Link>
         </Row>
       </Container>
-
+      <Supplier />
       <Newsletter />
     </div>
   );
