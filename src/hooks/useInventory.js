@@ -6,7 +6,7 @@ const useInventory = () => {
   // Load all data
   useEffect(() => {
     const getItems = async () => {
-      const url = `http://localhost:5000/inventory`;
+      const url = `https://serene-plains-94148.herokuapp.com/inventory`;
       const { data } = await axios.get(url);
       setInventoris(data);
     };

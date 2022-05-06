@@ -1,8 +1,8 @@
 # Car Archive
 
-## [Live Site](site_link)
+## [Live Site](https://car-archive-13491.web.app/)
 
-Click here to site preview [site_link](site_link)
+Click here to site preview [https://car-archive-13491.web.app/](https://car-archive-13491.web.app/)
 
 ## About site
 
@@ -20,4 +20,4 @@ This website show car inventory. Update button load details by clicked item id. 
 
 <p>Freamwork and library:- Here I use Boostrap, Firebase, React firebase hook, FontAwesome, React Router, React toast, Axios, React hook form</p>
 
-![picture alt](scrennshot_link "Car Archive")
+![picture alt](https://i.ibb.co/dkL143h/screencapture-localhost-3000-home-2022-05-06-22-09-42-1.png "Car Archive")
