@@ -1,11 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.config";
 
 const AddItem = () => {
   const { register, handleSubmit } = useForm();
+  const [user] = useAuthState(auth);
   // Handle submit
   const onSubmit = (data) => {
-    // add data
+    // add item
     const url = `http://localhost:5000/inventory`;
     fetch(url, {
       method: "POST",
@@ -25,7 +28,15 @@ const AddItem = () => {
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="mb-2 form-control"
-          placeholder="Name (maxLength: 25)"
+          placeholder="User email"
+          type="email"
+          value={user?.email}
+          readOnly
+          {...register("email", { required: true })}
+        />
+        <input
+          className="mb-2 form-control"
+          placeholder="Item's Name (maxLength: 25)"
           {...register("name", { required: true, maxLength: 25 })}
         />
         <textarea
