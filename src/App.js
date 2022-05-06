@@ -12,6 +12,7 @@ import InventoryDetails from "./Pages/Main/InventoryDetails/InventoryDetails";
 import Blogs from "./Pages/Main/Blogs/Blogs";
 import AddItem from "./Pages/Main/AddItem/AddItem";
 import Inventory from "./Pages/Main/Inventory/Inventory";
+import About from "./Pages/Main/About/About";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login></Login>} />
         <Route path="/reset" element={<ResetPassword></ResetPassword>} />
         <Route path="/blogs" element={<Blogs></Blogs>} />
+        <Route path="/about" element={<About></About>} />
         <Route
           path="/inventory/:id"
           element={
