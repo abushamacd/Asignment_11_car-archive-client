@@ -16,7 +16,7 @@ const MyItem = () => {
   useEffect(() => {
     const email = user.email;
     const getItems = async () => {
-      const url = `https://serene-plains-94148.herokuapp.com/inventory?email=${email}`;
+      const url = `https://fierce-ocean-04327.herokuapp.com/inventory?email=${email}`;
       const { data } = await axios.get(url);
       setItems(data);
     };
@@ -27,7 +27,7 @@ const MyItem = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `https://serene-plains-94148.herokuapp.com/inventory/${id}`;
+      const url = `https://fierce-ocean-04327.herokuapp.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -6,7 +6,7 @@ const useInventory = () => {
   // Load all data
   useEffect(() => {
     const getItems = async () => {
-      const url = `https://serene-plains-94148.herokuapp.com/inventory`;
+      const url = `https://fierce-ocean-04327.herokuapp.com/inventory`;
       const { data } = await axios.get(url);
       setInventoris(data);
     };

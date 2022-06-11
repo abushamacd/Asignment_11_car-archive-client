@@ -16,7 +16,7 @@ const InventoryDetails = () => {
   const handleDeliverd = () => {
     const quantity = inventory.quantity - 1;
     //  send data to server
-    const url = `https://serene-plains-94148.herokuapp.com/inventory/${id}`;
+    const url = `https://fierce-ocean-04327.herokuapp.com/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -40,7 +40,7 @@ const InventoryDetails = () => {
       parseInt(event.target.quantity.value) + parseInt(inventory.quantity);
     event.target.reset();
     //  send data to server
-    const url = `https://serene-plains-94148.herokuapp.com/inventory/${id}`;
+    const url = `https://fierce-ocean-04327.herokuapp.com/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
