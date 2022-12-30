@@ -10,7 +10,7 @@ const AddItem = () => {
   // Handle submit
   const onSubmit = (data) => {
     // add item to DB
-    const url = `https://fierce-ocean-04327.herokuapp.com/inventory`;
+    const url = `https://car-archive-server.onrender.com/inventory`;
     fetch(url, {
       method: "POST",
       headers: {

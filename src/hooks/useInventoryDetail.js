@@ -6,7 +6,7 @@ const useInventoryDetail = (id) => {
   // Load data based on id
   useEffect(() => {
     const getItems = async () => {
-      const url = `https://fierce-ocean-04327.herokuapp.com/inventory/${id}`;
+      const url = `https://car-archive-server.onrender.com/inventory/${id}`;
       const { data } = await axios.get(url);
       setInventory(data);
     };

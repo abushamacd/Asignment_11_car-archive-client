@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useInventory from "../../../hooks/useInventory";
+import Loading from "../../Shared/Loading/Loading";
 
 const Inventory = () => {
   // Get data from hook
@@ -10,7 +11,7 @@ const Inventory = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `https://fierce-ocean-04327.herokuapp.com/inventory/${id}`;
+      const url = `https://car-archive-server.onrender.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -41,57 +42,61 @@ const Inventory = () => {
           </Link>
         </div>
       </div>
-      <Row xs={1} md={2} lg={3} className="g-4">
-        {/* Loop on get data item */}
-        {inventoris.map((inventory) => (
-          <Col key={inventory._id}>
-            <Card>
-              <Card.Img
-                variant="top"
-                className="img-fluid p-3 radius"
-                src={inventory.img}
-              />
-              <Card.Body>
-                <Card.Title className="theme_color text-center">
-                  {inventory.name}
-                </Card.Title>
-                <p>
-                  <b>
-                    Price:{" "}
-                    <span className="theme_color">${inventory.price} </span>
-                  </b>
-                </p>
-                <p className="d-flex justify-content-between">
-                  <b>
-                    Supplier:{" "}
-                    <span className="theme_color">{inventory.supplier} </span>
-                  </b>
-                  <br />
-                  <b>
-                    Quantity:{" "}
-                    <span className="theme_color">{inventory.quantity} </span>
-                  </b>
-                </p>
-                <Card.Text
-                  title={inventory.description}
-                  className="text_justify"
-                >
-                  {inventory.description.length > 20
-                    ? inventory.description.slice(0, 100) + "..."
-                    : inventory.description}
-                </Card.Text>
-                <Button
-                  onClick={() => handleDelete(inventory._id)}
-                  className="w-100"
-                  variant="outline-themeButton"
-                >
-                  Delete this item
-                </Button>{" "}
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      {inventoris.length < 1 ? (
+        <Loading />
+      ) : (
+        <Row xs={1} md={2} lg={3} className="g-4">
+          {/* Loop on get data item */}
+          {inventoris.map((inventory) => (
+            <Col key={inventory._id}>
+              <Card>
+                <Card.Img
+                  variant="top"
+                  className="img-fluid p-3 radius"
+                  src={inventory.img}
+                />
+                <Card.Body>
+                  <Card.Title className="theme_color text-center">
+                    {inventory.name}
+                  </Card.Title>
+                  <p>
+                    <b>
+                      Price:{" "}
+                      <span className="theme_color">${inventory.price} </span>
+                    </b>
+                  </p>
+                  <p className="d-flex justify-content-between">
+                    <b>
+                      Supplier:{" "}
+                      <span className="theme_color">{inventory.supplier} </span>
+                    </b>
+                    <br />
+                    <b>
+                      Quantity:{" "}
+                      <span className="theme_color">{inventory.quantity} </span>
+                    </b>
+                  </p>
+                  <Card.Text
+                    title={inventory.description}
+                    className="text_justify"
+                  >
+                    {inventory.description.length > 20
+                      ? inventory.description.slice(0, 100) + "..."
+                      : inventory.description}
+                  </Card.Text>
+                  <Button
+                    onClick={() => handleDelete(inventory._id)}
+                    className="w-100"
+                    variant="outline-themeButton"
+                  >
+                    Delete this item
+                  </Button>{" "}
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      )}
     </Container>
   );
 };

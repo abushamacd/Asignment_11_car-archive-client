@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useInventory from "../../../hooks/useInventory";
+import Loading from "../../Shared/Loading/Loading";
 import Banner from "../Banner/Banner";
 import Newsletter from "../Newsletter/Newsletter";
 import SingleInventroy from "../SingleInventroy/SingleInventroy";
@@ -28,12 +29,18 @@ const Home = () => {
         </Row>
         <Row xs={1} md={2} lg={3} className="g-4 mb-5">
           {/* Loop on sliced item */}
-          {slicedInventoris.map((inventory) => (
-            <SingleInventroy
-              key={inventory._id}
-              inventory={inventory}
-            ></SingleInventroy>
-          ))}
+          {slicedInventoris.length < 1 ? (
+            <Loading />
+          ) : (
+            <>
+              {slicedInventoris.map((inventory) => (
+                <SingleInventroy
+                  key={inventory._id}
+                  inventory={inventory}
+                ></SingleInventroy>
+              ))}
+            </>
+          )}
         </Row>
         <Row className="mx-auto w-25 text-center">
           {/* Manage Inventory Button */}
